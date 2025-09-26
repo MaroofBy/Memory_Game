@@ -1,0 +1,10 @@
+int attr freezesAnimation 0x0
+int attr gifSource 0x0
+int attr isOpaque 0x0
+int attr loopCount 0x0
+int[] styleable GifTextureView { 0x0, 0x0 }
+int styleable GifTextureView_gifSource 0
+int styleable GifTextureView_isOpaque 1
+int[] styleable GifView { 0x0, 0x0 }
+int styleable GifView_freezesAnimation 0
+int styleable GifView_loopCount 1

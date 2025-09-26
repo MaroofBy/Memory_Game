@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_background_style"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <com.example.firstgame.GifView
+        android:id="@+id/game_over_gif"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="16dp" />
+
+    <com.example.firstgame.OutlineTextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game Over"
+        android:textColor="#EF5350"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your score is X. Try again?"
+        android:textColor="#EF5350"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/play_again_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#E53935"
+            android:text="Play Again"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/exit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exit"
+            android:backgroundTint="#424242"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</LinearLayout>

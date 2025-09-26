@@ -1,0 +1,32 @@
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Local configuration
+local.properties
+gradle-app.setting
+
+# IntelliJ/Android Studio
+*.iml
+.idea/
+!.idea/codeStyles  # (optional: keep code style settings if you want consistent formatting)
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Android generated
+/captures/
+/.externalNativeBuild/
+/cxx/
+/outputs/
+/navigation.json
+/.navigation/
+
+# Keystore files (don’t upload signing keys!)
+*.jks
+*.keystore
+
+# Log / temp files
+*.log

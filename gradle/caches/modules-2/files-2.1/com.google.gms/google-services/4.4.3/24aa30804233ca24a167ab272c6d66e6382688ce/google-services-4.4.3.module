@@ -1,0 +1,161 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.google.gms",
+    "module": "google-services",
+    "version": "4.4.3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.22"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "google-services-4.4.3.jar",
+          "url": "google-services-4.4.3.jar",
+          "size": 41606,
+          "sha512": "e420b59795f7f11f82eea04da2db6f957c6355b1bbdc2350ff51700763a34402e6e3c11c03a315a167120920a74039346a15e24369d13186af235d3bc17bd88f",
+          "sha256": "6651265d0ce8b29adcd3b60c0ada7da1168368d03f7328da3675bba8f49defe1",
+          "sha1": "d2aed881253ddeb1662a6f4134e92b80a4a85160",
+          "md5": "241917509e12252d10f60a7a308d816e"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.google.android.gms",
+          "module": "strict-version-matcher-plugin",
+          "version": {
+            "requires": "1.2.4"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.5"
+          }
+        },
+        {
+          "group": "com.google.guava",
+          "module": "guava",
+          "version": {
+            "requires": "27.0.1-jre"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.22"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "google-services-4.4.3.jar",
+          "url": "google-services-4.4.3.jar",
+          "size": 41606,
+          "sha512": "e420b59795f7f11f82eea04da2db6f957c6355b1bbdc2350ff51700763a34402e6e3c11c03a315a167120920a74039346a15e24369d13186af235d3bc17bd88f",
+          "sha256": "6651265d0ce8b29adcd3b60c0ada7da1168368d03f7328da3675bba8f49defe1",
+          "sha1": "d2aed881253ddeb1662a6f4134e92b80a4a85160",
+          "md5": "241917509e12252d10f60a7a308d816e"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "google-services-4.4.3-javadoc.jar",
+          "url": "google-services-4.4.3-javadoc.jar",
+          "size": 261,
+          "sha512": "8b18d810ad92211314dfd13dc003687df7d7164c45a6df9cf72e0568cfce567679f2cb931cbe653f80b2972b28081cd20dcfc53db0e03a2ef8eaf8161dd535e2",
+          "sha256": "3aa96c952ca684985384750cdf87fd065a791399182f5a3070fef4d44bbf4df1",
+          "sha1": "a38bbfe087780dafca58e690bd01a248b641c186",
+          "md5": "6a01fd39feeeab373b514942f38c5ad9"
+        },
+        {
+          "name": "google-services-4.4.3-javadoc.jar",
+          "url": "google-services-4.4.3-javadoc.jar",
+          "size": 261,
+          "sha512": "8b18d810ad92211314dfd13dc003687df7d7164c45a6df9cf72e0568cfce567679f2cb931cbe653f80b2972b28081cd20dcfc53db0e03a2ef8eaf8161dd535e2",
+          "sha256": "3aa96c952ca684985384750cdf87fd065a791399182f5a3070fef4d44bbf4df1",
+          "sha1": "a38bbfe087780dafca58e690bd01a248b641c186",
+          "md5": "6a01fd39feeeab373b514942f38c5ad9"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "google-services-4.4.3-sources.jar",
+          "url": "google-services-4.4.3-sources.jar",
+          "size": 6951,
+          "sha512": "4e8f5822644d31bdcb751858f8e9c92edb48cd593b90be60c052b3a5e9d19247218c56913405504416c6e2e3c4c675d086b4cbf998d43805a624c4027ef4af2f",
+          "sha256": "f635277eae2703e29d7baab671a2840c7323d7495b2ade7f7ce63c8326ec9235",
+          "sha1": "f09eaa26ec5785dffc536c9ec8bc956a610a47d7",
+          "md5": "8077a733cf94490977c2f91dd031a94a"
+        },
+        {
+          "name": "google-services-4.4.3-sources.jar",
+          "url": "google-services-4.4.3-sources.jar",
+          "size": 6951,
+          "sha512": "4e8f5822644d31bdcb751858f8e9c92edb48cd593b90be60c052b3a5e9d19247218c56913405504416c6e2e3c4c675d086b4cbf998d43805a624c4027ef4af2f",
+          "sha256": "f635277eae2703e29d7baab671a2840c7323d7495b2ade7f7ce63c8326ec9235",
+          "sha1": "f09eaa26ec5785dffc536c9ec8bc956a610a47d7",
+          "md5": "8077a733cf94490977c2f91dd031a94a"
+        }
+      ]
+    }
+  ]
+}
