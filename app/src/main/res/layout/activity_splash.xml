@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainSplashActivity">
+
+
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#66000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/reply"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/reply"
+        android:contentDescription="Back"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="52dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Settings"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_settings"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Welcome, Player!"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/scoreDisplayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Highest Score: 0"
+        android:textSize="22sp"
+        android:textColor="@android:color/white"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
+
+    <Button
+        android:id="@+id/levelsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:backgroundTint="#2196F3"
+        android:elevation="8dp"
+        android:paddingStart="40dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="40dp"
+        android:paddingBottom="14dp"
+        android:stateListAnimator="@null"
+        android:text="Levels"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:cornerRadius="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreDisplayTextView" />
+
+    <Button
+        android:id="@+id/difficultyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#4CAF50"
+        android:elevation="8dp"
+        android:paddingStart="40dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="40dp"
+        android:paddingBottom="14dp"
+        android:stateListAnimator="@null"
+        android:text="Challenge Mode"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:cornerRadius="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/levelsButton" />
+
+
+    <Button
+        android:id="@+id/easyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#8BC34A"
+        android:text="Easy"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        app:cornerRadius="24dp"
+        android:elevation="8dp"
+        android:stateListAnimator="@null"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/difficultyButton" />
+
+    <Button
+        android:id="@+id/normalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FF9800"
+        android:text="Normal"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        app:cornerRadius="24dp"
+        android:elevation="8dp"
+        android:stateListAnimator="@null"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/easyButton" />
+
+    <Button
+        android:id="@+id/hardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#F44336"
+        android:text="Hard"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        app:cornerRadius="24dp"
+        android:elevation="8dp"
+        android:stateListAnimator="@null"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/normalButton" />
+
+    <Button
+        android:id="@+id/insaneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#C62828"
+        android:text="Insane"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        app:cornerRadius="24dp"
+        android:elevation="8dp"
+        android:stateListAnimator="@null"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hardButton" />
+
+    <Button
+        android:id="@+id/impossibleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#B71C1C"
+        android:text="Impossible"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        app:cornerRadius="24dp"
+        android:elevation="8dp"
+        android:stateListAnimator="@null"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/insaneButton" />
+
+    <Button
+        android:id="@+id/leaderboardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#FF9800"
+        android:elevation="8dp"
+        android:paddingStart="40dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="40dp"
+        android:paddingBottom="14dp"
+        android:stateListAnimator="@null"
+        android:text="Leaderboard"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:cornerRadius="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/difficultyButton" />
+
+
+    <Button
+        android:id="@+id/tutorialButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#9E9E9E"
+        android:elevation="8dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:stateListAnimator="@null"
+        android:text="Tutorial"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/difficultyButton"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:id="@+id/levelsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreDisplayTextView">
+
+        <TextView
+            android:id="@+id/currentPageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Levels 1-10"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_marginBottom="16dp"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3" />
+
+        <GridLayout
+            android:id="@+id/levelGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:columnCount="3"
+            android:gravity="center"
+            android:translationX="8dp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/pageLeftArrow"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Previous page"
+                android:src="@drawable/ic_arrow_left"
+                app:tint="@android:color/white" />
+
+            <ImageButton
+                android:id="@+id/pageRightArrow"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginStart="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_right"
+                android:contentDescription="Next page"
+                app:tint="@android:color/white" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

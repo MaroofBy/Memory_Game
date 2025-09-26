@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background_style"
+    android:elevation="8dp"
+    android:padding="24dp">
+
+    <nl.dionsegijn.konfetti.xml.KonfettiView
+        android:id="@+id/konfettiView"
+        android:layout_width="346dp"
+        android:layout_height="188dp"
+        android:layout_alignTop="@id/trophy_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <ImageView
+        android:id="@+id/trophy_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/trophy_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trophy_image"
+        android:layout_centerHorizontal="true"
+        android:text="Congratulations!"
+        android:textColor="#92D469"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_title"
+        android:layout_centerHorizontal="true"
+        android:text="You won with a score of X!"
+        android:textColor="#92D469"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_message"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/play_again_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play Again"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#66BB6A"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/exit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#40566C"
+            android:text="Exit"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</RelativeLayout>
