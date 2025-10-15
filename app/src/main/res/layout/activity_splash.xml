@@ -66,13 +66,13 @@
         android:layout_marginEnd="16dp"
         android:text="Welcome, Player!"
         android:textSize="28sp"
+        android:visibility="gone"
         android:textStyle="bold"
         android:textColor="@android:color/white"
         android:shadowColor="#000000"
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="5"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -85,14 +85,14 @@
         android:text="Highest Score: 0"
         android:textSize="22sp"
         android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView"
         android:shadowColor="#000000"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="3"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/levelsButton"
@@ -100,20 +100,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:backgroundTint="#2196F3"
+        android:textColor="@android:color/white"
+        android:text="Levels"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/scoreDisplayTextView"
         android:elevation="8dp"
         android:paddingStart="40dp"
         android:paddingTop="14dp"
         android:paddingEnd="40dp"
         android:paddingBottom="14dp"
         android:stateListAnimator="@null"
-        android:text="Levels"
-        android:textColor="@android:color/white"
         android:textSize="20sp"
-        android:visibility="gone"
         app:cornerRadius="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scoreDisplayTextView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/difficultyButton"
@@ -121,20 +121,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="#4CAF50"
+        android:textColor="@android:color/white"
+        android:text="Challenge Mode"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/levelsButton"
         android:elevation="8dp"
         android:paddingStart="40dp"
         android:paddingTop="14dp"
         android:paddingEnd="40dp"
         android:paddingBottom="14dp"
         android:stateListAnimator="@null"
-        android:text="Challenge Mode"
-        android:textColor="@android:color/white"
         android:textSize="20sp"
-        android:visibility="gone"
         app:cornerRadius="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/levelsButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
@@ -238,20 +238,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="#FF9800"
+        android:textColor="@android:color/white"
+        android:text="Leaderboard"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/difficultyButton"
         android:elevation="8dp"
         android:paddingStart="40dp"
         android:paddingTop="14dp"
         android:paddingEnd="40dp"
         android:paddingBottom="14dp"
         android:stateListAnimator="@null"
-        android:text="Leaderboard"
-        android:textColor="@android:color/white"
         android:textSize="20sp"
-        android:visibility="gone"
         app:cornerRadius="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/difficultyButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button

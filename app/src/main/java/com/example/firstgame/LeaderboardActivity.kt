@@ -147,6 +147,7 @@ class LeaderboardActivity : AppCompatActivity() {
     }
 
     /** Load Highest Level Leaderboard (all entries, scrollable) **/
+
     private fun loadHighestLevelLeaderboard() {
         db.collection("users")
             .orderBy("highest_level", Query.Direction.DESCENDING)
@@ -167,7 +168,6 @@ class LeaderboardActivity : AppCompatActivity() {
                     )
                     rank++
                 }
-
                 leaderboardListView.adapter = LeaderboardAdapter(
                     this,
                     leaderboardEntries,
@@ -189,9 +189,7 @@ class LeaderboardActivity : AppCompatActivity() {
                     val difficulty = document.getString("challengeMode") ?: return@mapNotNull null
                     val bestTime = document.getLong("best_time") ?: return@mapNotNull null
                     val playerId = document.id
-
                     if (difficulty == "none" || bestTime <= 0) return@mapNotNull null
-
                     val displayName = if (playerId == currentPlayerId) "$name (You)" else name
                     LeaderboardEntry(0, displayName, difficulty, bestTime.toString())
                 }.sortedWith(compareBy<LeaderboardEntry> {
@@ -199,11 +197,9 @@ class LeaderboardActivity : AppCompatActivity() {
                 }.thenBy {
                     it.extra2.toLongOrNull() ?: Long.MAX_VALUE
                 })
-
                 val rankedEntries = allChallengeEntries.mapIndexed { index, entry ->
                     entry.copy(rank = index + 1)
                 }
-
                 leaderboardListView.adapter = LeaderboardAdapter(
                     this,
                     rankedEntries,
@@ -356,7 +352,6 @@ class LeaderboardActivity : AppCompatActivity() {
 
             val entry = entries[position]
 
-            // 🔹 Default: show rank number
             holder.rankTextView.visibility = View.VISIBLE
             holder.rankTextView.text = "${entry.rank}."
             holder.medalImageView.visibility = View.GONE

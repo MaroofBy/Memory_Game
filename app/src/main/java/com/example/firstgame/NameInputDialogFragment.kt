@@ -11,11 +11,9 @@ import androidx.fragment.app.DialogFragment
 import android.view.WindowManager // Import this for setting layout attributes
 
 class NameInputDialogFragment : DialogFragment() {
-
     interface NameInputListener {
         fun onNameSubmitted(playerName: String)
     }
-
     private var listener: NameInputListener? = null
 
     override fun onAttach(context: android.content.Context) {
@@ -64,21 +62,15 @@ class NameInputDialogFragment : DialogFragment() {
             // Get screen width
             val displayMetrics = resources.displayMetrics
             val width = displayMetrics.widthPixels
-
             // Calculate desired width (e.g., 85% of screen width)
             val desiredWidth = (width * 0.85).toInt() // Adjust 0.85 (85%) as needed for more/less space
-
             // Set dialog width, and wrap content for height
             setLayout(desiredWidth, ViewGroup.LayoutParams.WRAP_CONTENT)
-
             // Center the dialog (it usually is by default for dialogs, but explicitly setting gravity ensures it)
             setGravity(android.view.Gravity.CENTER)
-
-            // Make the dialog background transparent so the custom drawable shows
             setBackgroundDrawableResource(android.R.color.transparent)
         }
     }
-
     override fun onDetach() {
         super.onDetach()
         listener = null // Clear the listener to prevent memory leaks

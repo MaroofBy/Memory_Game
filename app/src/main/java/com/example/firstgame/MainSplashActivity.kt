@@ -19,6 +19,7 @@ import android.view.Gravity
 import android.view.MotionEvent
 import androidx.core.view.GestureDetectorCompat
 import android.graphics.drawable.InsetDrawable // Add this import at the top of your file
+import com.google.firebase.firestore.FirebaseFirestoreSettings
 
 
 class MainSplashActivity : AppCompatActivity(), NameInputDialogFragment.NameInputListener {
@@ -70,24 +71,18 @@ class MainSplashActivity : AppCompatActivity(), NameInputDialogFragment.NameInpu
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
-
         mainRootLayout = findViewById(R.id.main_root_layout)
-
-
-
         sharedPreferences = getSharedPreferences("game_prefs", Context.MODE_PRIVATE)
-
         currentPlayerId = sharedPreferences.getString("player_id", null)
         if (currentPlayerId.isNullOrEmpty()) {
             currentPlayerId = UUID.randomUUID().toString()
             sharedPreferences.edit().putString("player_id", currentPlayerId).apply()
         }
-
         MusicManager.startMusic(this)
         db = FirebaseFirestore.getInstance()
         isSfxEnabled = sharedPreferences.getBoolean("sfx_enabled", true)
         highestUnlockedLevel = sharedPreferences.getInt("highest_unlocked_level", 1)
+
         // Initialize views
         welcomeTextView = findViewById(R.id.welcomeTextView)
         scoreDisplayTextView = findViewById(R.id.scoreDisplayTextView)
@@ -110,6 +105,12 @@ class MainSplashActivity : AppCompatActivity(), NameInputDialogFragment.NameInpu
 
         hideAllViews()
 
+
+        FirebaseFirestore.getInstance().firestoreSettings =
+            FirebaseFirestoreSettings.Builder()
+                .setPersistenceEnabled(true) // cache enabled
+                .build()
+
         val savedUsername = sharedPreferences.getString("player_name", null)
         val showDifficultySelection = intent.getBooleanExtra("show_difficulty_selection", false)
         val showLevelSelection = intent.getBooleanExtra("show_level_selection", false)
@@ -126,7 +127,6 @@ class MainSplashActivity : AppCompatActivity(), NameInputDialogFragment.NameInpu
                 showGameMenu()
             }
         }
-
         // Button Listeners
         settingsButton.setOnClickListener { showSettingsDialog() }
         difficultyButton.setOnClickListener { showDifficultySelection() }
@@ -164,7 +164,7 @@ class MainSplashActivity : AppCompatActivity(), NameInputDialogFragment.NameInpu
         }
 
         gestureDetector = GestureDetectorCompat(this, SwipeGestureListener())
-
+    
     }
     private inner class SwipeGestureListener : GestureDetector.SimpleOnGestureListener() {
         private val SWIPE_THRESHOLD = 100
@@ -250,7 +250,6 @@ class MainSplashActivity : AppCompatActivity(), NameInputDialogFragment.NameInpu
         tutorialButton.visibility = View.VISIBLE
         leaderboardButton.visibility = View.VISIBLE
     }
-
     private fun showDifficultySelection() {
         hideAllViews()
         welcomeTextView.text = "Select Difficulty"
@@ -274,34 +273,22 @@ class MainSplashActivity : AppCompatActivity(), NameInputDialogFragment.NameInpu
 
     private fun displayLevelButtons() {
         levelGrid.removeAllViews()
-
         val maxPage = (totalLevels + levelsPerPage - 1) / levelsPerPage
         val startLevel = (currentPage - 1) * levelsPerPage + 1
         val endLevel = minOf(startLevel + levelsPerPage - 1, totalLevels)
-
         currentPageTextView.text = "Levels $startLevel-$endLevel"
         pageLeftArrow.visibility = if (currentPage > 1) View.VISIBLE else View.INVISIBLE
         pageRightArrow.visibility = if (currentPage < maxPage) View.VISIBLE else View.INVISIBLE
-
-        // --- CHANGE 1: SMALLER BUTTONS & MORE SIDE SPACE ---
-        // We now use 75% of the screen width. You can adjust 0.75f to make it bigger or smaller.
         val screenWidth = resources.displayMetrics.widthPixels
         val spacing = (30 * resources.displayMetrics.density).toInt()
-
         val buttonSize = ((screenWidth * 0.90f).toInt() - (spacing * (3 + 1))) / 3
-
-        // --- CHANGE 2: FIXING THE ARROW BUG ---
-        // We force the grid to always have a height of 4 rows, so it doesn't shrink on the last page.
         val totalGridHeight = (buttonSize * 4) + (spacing * 5) // 4 rows of buttons + 5 rows of spacing
         levelGrid.layoutParams.height = totalGridHeight
-
         val hasCenteredButton = (endLevel % 10 == 0 && endLevel <= 30)
-
         val gridLevelsEnd = if (hasCenteredButton) endLevel - 1 else endLevel
         for (levelNumber in startLevel..gridLevelsEnd) {
             addLevelButtonToGrid(levelNumber, buttonSize, spacing)
         }
-
         if (hasCenteredButton) {
             val spacer = Space(this)
             levelGrid.addView(spacer)
@@ -380,7 +367,7 @@ class MainSplashActivity : AppCompatActivity(), NameInputDialogFragment.NameInpu
             "score" to 0L,
             "highest_level" to 1,
             "challengeMode" to "none",
-            "best_time" to 9223372036854775807L
+            "best_time" to 999999L
         )
 
         userRef.set(initialUserData)
